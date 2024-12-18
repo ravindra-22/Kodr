@@ -1,0 +1,89 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing :border-box;
+}
+html,body{
+width :100%;
+height :100%;
+}
+
+main{
+    background-color: aquamarine;
+    height: 100vh;
+    padding-top: 0.1px;
+
+}
+#container{
+    background-color: antiquewhite;
+    height: 430px;
+    width: 320px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0.5em;
+
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+}
+.top p{
+    background-color: green;
+    color: white;
+    padding:4px 8px;
+    border-radius: 30px;
+}
+.mid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 3px;     
+}
+.mid img{
+    height: 8em;
+    width: 8em;
+    border-radius: 50%;
+    margin-top: -20px;
+}
+#epic{
+    color: blue;
+}
+.skills{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    font-size: 1em;
+    gap: 20px;
+    
+    }
+     
+.skills p{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 4px 9px;  
+    &:nth-last-child(1){
+        background-color: blue;
+        color: white;
+    }  
+}
+
+.data{
+    text-align: center;
+    margin-top: 20px;
+    /* padding: 0px 20px; */
+    margin-bottom: 1em;
+}
+a{
+    text-align: center;
+    border-top: 1px solid black;
+    padding-top: 15px;
+    text-decoration: none;
+    color: black;
+}
+

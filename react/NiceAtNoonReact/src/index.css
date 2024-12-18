@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  background-color: #e4e4e4;
+}
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+.hidding-scrollbar::-webkit-scrollbar {
+  display: none;
+}

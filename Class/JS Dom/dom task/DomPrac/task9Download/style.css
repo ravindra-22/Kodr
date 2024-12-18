@@ -1,0 +1,63 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing :border-box;
+}
+html,body{
+width :100%;
+height :100%;
+}
+main{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(55, 156, 156);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#card{
+    height: 200px;
+    width: 100%;
+    margin: 30%;
+    padding: 30px;
+    background-color: antiquewhite;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#progress{
+    height: 20px;
+    width: 100%;
+    background-color: grey;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 5%;
+}
+#growth{
+    height: 100%;
+    width: 0;
+    background-color: green;
+    border-radius: 20px;
+    transition: all 0.2 ease;
+}
+#download{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: xx-large;
+}
+#download button{
+    padding: 10px 30px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 8px;    
+}
+
+button:active{
+    scale: 0.9;
+}
