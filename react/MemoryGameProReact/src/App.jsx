@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Card from "./components/Card";
+import Stats from "./components/Stats";
+import RestartButton from "./components/RestartButton";
 
 // Import Images
 import faceLoud from "./assets/images/faceLoud.jpg";
@@ -10,7 +13,7 @@ import star from "./assets/images/star.jpg";
 
 const images = [faceLoud, handClap, heart, moon, pencil, star];
 
-const MemoryGame = () => {
+const App = () => {
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
@@ -22,7 +25,7 @@ const MemoryGame = () => {
 
   const initializeGame = () => {
     const shuffledImages = [...images, ...images]
-      .sort(() => Math.random() - 2)
+      .sort(() => Math.random() - 0.5)
       .map((image, index) => ({
         id: index,
         image,
@@ -80,45 +83,19 @@ const MemoryGame = () => {
       <h1 className="text-4xl font-bold text-center mb-6">MEMORY GAME</h1>
       <div className="grid grid-cols-4 gap-2 mb-6">
         {cards.map((card, index) => (
-          <div
+          <Card
             key={card.id}
+            card={card}
             onClick={() => handleCardClick(index)}
-            className={`h-24 w-24 flex items-center justify-center border-2 border-gray-700 cursor-pointer ${
-              card.flipped || matchedCards.includes(index) ? "bg-white" : "bg-black"
-            }`}
-          >
-            {card.flipped || matchedCards.includes(index) ? (
-              <img src={card.image} alt="Card" className="h-full w-full" />
-            ) : (
-              <span className="text-white text-3xl font-bold">H</span>
-            )}
-          </div>
+          />
         ))}
       </div>
       <div className="w-full bg-white rounded-lg shadow-md p-4 max-w-4xl">
-        <div className="flex justify-around text-center mb-4">
-          <div>
-            <p className="text-2xl font-bold">{stats.moves}</p>
-            <p className="text-sm uppercase text-gray-500">Moves</p>
-          </div>
-          <div>
-            <p className="text-2xl font-bold">{stats.points}</p>
-            <p className="text-sm uppercase text-gray-500">Points</p>
-          </div>
-          <div>
-            <p className="text-2xl font-bold">{stats.accuracy}%</p>
-            <p className="text-sm uppercase text-gray-500">Accuracy</p>
-          </div>
-        </div>
-        <button
-          onClick={initializeGame}
-          className="bg-red-500 text-white px-4 py-2 rounded"
-        >
-          Restart Game
-        </button>
+        <Stats stats={stats} />
+        <RestartButton onRestart={initializeGame} />
       </div>
     </div>
   );
 };
 
-export default MemoryGame;
+export default App;
